@@ -2,3 +2,26 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+body {
+  background-color: #f7f2e9;
+  font-size: .8em;
+}
+.nav-bar {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  color: #212121;
+}
+
+.nav-link:hover {
+  color: #DDA797;
+}
+
+.header-img{
+  width: 100%;
+  padding-left: 20px;
+  padding-right:20px;
+}
