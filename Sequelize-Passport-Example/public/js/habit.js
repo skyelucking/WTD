@@ -11,13 +11,33 @@ $(document).ready(() => {
     userId = data.id;
   });
 
-  const obj = [];
-  $(".option").click(function() {
-    obj.push({
+  // making a new chirp object
+  
+  $(".option").click(function () {
+    let obj;
+    obj = {
       habitName: $(this).attr("data-habit-option"),
       categoryID: dataOptions.category,
       userID: userId
+    };
+
+    console.log(obj)
+
+    $.post("/api/add_habit", obj)
+      .then(() => {
+        alert("created")
+        // var row = $("<div>");
+        // row.addClass("habits");
+
+        // row.append("<p>" + obj.habitName + " </p>")
+
+        // $(".container").append(row)
     });
-    console.log(obj);
+
   });
+
+
+ 
+
+
 });

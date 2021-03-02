@@ -55,14 +55,21 @@ module.exports = function(app) {
     }
   });
 
+  // getting all the habits 
+  app.get("/api/all", function(req,res){
+    db.habits_selected.findAll({}).then(function(){
+      res.json(results);
+    })
+  } )
+
   app.post("/api/add_habit", (req, res) => {
     console.log(req.body);
     db.habits_selected
       .create({
         habitID: req.body.habitID,
         habitName: req.body.habitName,
-        categoryID: req.body.categoryID,
-        userId: req.body.userID
+        categoryID: req.categoryID,
+        userID: req.body.userID
       })
       .then(() => {
         res.send(200);
