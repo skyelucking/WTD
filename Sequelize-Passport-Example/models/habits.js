@@ -1,16 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
-  const HabitsSelected = sequelize.define("habits_selecteds", {
-    habitID: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      autoIncrement: true
-    },
+  const HabitsSelected = sequelize.define("habits_selected", {
     habitName: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    cateogyID: {
+    categoryID: {
       type: DataTypes.INTEGER,
       allowNull: true
     },

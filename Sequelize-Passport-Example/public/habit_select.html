@@ -20,7 +20,7 @@
       <img src="./img/Winning-the-Day.png" id="headerImg">
     </div>
     <div class="container my-4 d-flex justify-content-center text-center">
-
+      <form class="habit_select_form">
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -28,20 +28,19 @@
         </button>
         <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
           <li class="dropdown-submenu">
-            <a class="dropdown-item" tabindex="-1" href="#">Exercise</a>
+            <a class="dropdown-item" tabindex="-1" >Exercise
             <ul class="dropdown-menu">
-
               <li class="dropdown-submenu">
-              <li class="dropdown-item"><a href="#">Walking</a></li>
-              <li class="dropdown-item"><a href="#">Yoga</a></li>
+              <li class="dropdown-item"><a href="#" data-categoryID="1" data-habitName="Walking" id="habitName">Walking</a></li>
+              <li class="dropdown-item"><a href="#" data-categoryID="1" data-habitName="Yoga" id="habitName">Yoga</a></li>
             </ul>
           </li>
           <li class="dropdown-submenu">
-            <a class="dropdown-item" tabindex="-1" href="#">Organization</a>
+            <a class="dropdown-item" tabindex="-1"  >Organization</a>
             <ul class="dropdown-menu">
-              <li class="dropdown-item"><a tabindex="-1" href="#">Organize Desk</a></li>
+              <li class="dropdown-item"><a tabindex="-1" data-categoryID="2" data-habitName="Organize Desk">Organize Desk</a></li>
               <li class="dropdown-submenu">
-              <li class="dropdown-item"><a href="#">Clearn Car</a></li>
+              <li class="dropdown-item"><a href="#" data-categoryID="2" data-habitName="Clean Car">Clean Car</a></li>
               <li class="dropdown-item"><a href="#">Unsubscribe From Newsletters</a></li>
             </ul>
           </li>
@@ -72,7 +71,7 @@
               <li class="dropdown-submenu">
             </ul>
           </li>
-          <li class="dropdown-submenu">
+          <fomm class="dropdown-submenu">
             <a class="dropdown-item" tabindex="-1" href="#">Learning</a>
             <ul class="dropdown-menu">
               <li class="dropdown-item"><a tabindex="-1" href="#">Homework</a></li>
@@ -82,6 +81,7 @@
 
           </li>
         </ul>
+      </fomm>
       </div>
 
     </div>

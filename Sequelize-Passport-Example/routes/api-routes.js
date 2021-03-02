@@ -58,10 +58,9 @@ module.exports = function(app) {
   app.post("/api/add_habit", (req, res) => {
     db.habits_selecteds
       .create({
-        habitID: req.body.habitID,
         habitName: req.body.habitName,
         cateogyID: req.body.cateogyID,
-        userId: req.body.userID
+        // userId: req.body.userID
       })
       .then(() => {
         res.send(200);
