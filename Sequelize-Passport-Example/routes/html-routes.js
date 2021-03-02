@@ -26,4 +26,13 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
+
+  app.get("/manage", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.sendFile(path.join(__dirname, "../public/habit_select.html"));
+    } else {
+      res.sendFile(path.join(__dirname, "../public/login.html"));
+    }
+  });
 };
