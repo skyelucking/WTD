@@ -1,3 +1,11 @@
+#headerImg{
+  width: 70%; 
+  height: 100%
+}
+.WTDbutton{
+  margin: 10px;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
