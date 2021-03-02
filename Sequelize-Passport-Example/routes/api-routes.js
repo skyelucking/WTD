@@ -56,12 +56,31 @@ module.exports = function(app) {
   });
 
   app.post("/api/add_habit", (req, res) => {
-    db.habits_selecteds
+    console.log(req.body);
+    db.habits_selected
       .create({
         habitID: req.body.habitID,
         habitName: req.body.habitName,
-        cateogyID: req.body.cateogyID,
+        categoryID: req.body.categoryID,
         userId: req.body.userID
+      })
+      .then(() => {
+        res.send(200);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(401).json(err);
+      });
+  });
+
+  app.post("/api/tracked_habits", (req, res) => {
+    console.log(req);
+    db.completed_habits
+      .create({
+        completedID: req.body.completedID,
+        habitSelectedID: req.body.habitSelectedID,
+        userId: req.body.userId,
+        date: req.body.date
       })
       .then(() => {
         res.send(200);

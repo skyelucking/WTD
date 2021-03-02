@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/199fd71158.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/Sequelize-Passport-Example/public/stylesheets/style.css">
+    <link href="stylesheets/style.css" rel="stylesheet" />
 
-    <title>Winning the Day - Habit Tracker</title>
+    <title>Winning the Day - Habits Selected</title>
   </head>
 
   <body class="body">
@@ -26,64 +26,67 @@
           aria-haspopup="true" aria-expanded="false">
           Select Your Habits
         </button>
-        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+        <!-- Exercise -->
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" >
           <li class="dropdown-submenu">
-            <a class="dropdown-item" tabindex="-1" href="#">Exercise</a>
+            <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Exercise", "category-value":"1"}' >Exercise</a>
             <ul class="dropdown-menu">
-
               <li class="dropdown-submenu">
-              <li class="dropdown-item"><a href="#">Walking</a></li>
-              <li class="dropdown-item"><a href="#">Yoga</a></li>
+              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Walking">Walking</a></li>
+              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Yoga">Yoga</a></li>
             </ul>
           </li>
+          <!-- Organize -->
           <li class="dropdown-submenu">
-            <a class="dropdown-item" tabindex="-1" href="#">Organization</a>
+            <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Organize", "category-value":"2"}' >Organization</a>
             <ul class="dropdown-menu">
-              <li class="dropdown-item"><a tabindex="-1" href="#">Organize Desk</a></li>
+              <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option= "To-do List">Daily To-Do List</a></li>
               <li class="dropdown-submenu">
-              <li class="dropdown-item"><a href="#">Clearn Car</a></li>
-              <li class="dropdown-item"><a href="#">Unsubscribe From Newsletters</a></li>
+              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Declutter">Declutter Car</a></li>
+              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Unsubscribe">Unsubscribe From Newsletters</a></li>
             </ul>
           </li>
+          <!-- Budgeting -->
           <li class="dropdown-submenu">
-            <a class="dropdown-item" tabindex="-1" href="#">Budgeting</a>
+            <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Budget", 
+            "category-value":"3"}'>Budgeting</a>
             <ul class="dropdown-menu">
-              <li class="dropdown-item"><a tabindex="-1" href="#">Save $50</a></li>
+              <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option= "Save">Save $50</a></li>
               <li class="dropdown-submenu">
-              <li class="dropdown-item"><a href="#">Buy Nothing Day</a></li>
-              <li class="dropdown-item"><a href="#">Don't eat out</a></li>
+              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "No Spend">No Spending</a></li>
+              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Eat Out">Don't eat out</a></li>
             </ul>
           </li>
+          <!-- Self-Care -->
           <li class="dropdown-submenu">
-            <a class="dropdown-item" tabindex="-1" href="#">Self-Care</a>
+            <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Self-Care", "category-value":"4"}'>Self-Care</a>
             <ul class="dropdown-menu">
-              <li class="dropdown-item"><a tabindex="-1" href="#">Meditate</a></li>
+              <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option= "Meditate">Meditate</a></li>
               <li class="dropdown-submenu">
-              <li class="dropdown-item"><a href="#">Journal</a></li>
+              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Journal">Journal</a></li>
             </ul>
           </li>
+          <!-- Healthy Eating -->
           <li class="dropdown-submenu">
-            <a class="dropdown-item" tabindex="-1" href="#">Healthy Eating</a>
+            <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Healthy Eating", "category-value":"5"}'>Healthy Eating</a>
             <ul class="dropdown-menu">
-              <li class="dropdown-item"><a tabindex="-1" href="#">Drink Water</a></li>
+              <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option= "Drink Water">Drink Water</a></li>
               <li class="dropdown-submenu">
-              <li class="dropdown-item"><a href="#">Eat Salad for a Meal</a></li>
-              <li class="dropdown-item"><a href="#">No Sweets</a></li>
+              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Salad">Eat Salad for a Meal</a></li>
+              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "No Sweets">No Sweets</a></li>
               <li class="dropdown-submenu">
             </ul>
           </li>
+          <!-- Learning -->
           <li class="dropdown-submenu">
-            <a class="dropdown-item" tabindex="-1" href="#">Learning</a>
+            <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Learning", "category-value":"6"}'>Learning</a>
             <ul class="dropdown-menu">
-              <li class="dropdown-item"><a tabindex="-1" href="#">Homework</a></li>
+              <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option="Homework">Homework</a></li>
               <li class="dropdown-submenu">
-              <li class="dropdown-item"><a href="#">Tutorial Video</a></li>
-
-
+              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Tutorial">Tutorial Video</a></li>
           </li>
         </ul>
       </div>
-
     </div>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -93,8 +96,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"></script>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/habit.js"></script>
   </body>
 
 </html>

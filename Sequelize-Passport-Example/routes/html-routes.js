@@ -35,4 +35,13 @@ module.exports = function(app) {
       res.sendFile(path.join(__dirname, "../public/login.html"));
     }
   });
+
+  app.get("/track", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.sendFile(path.join(__dirname, "../public/tracked_habits.html"));
+    } else {
+      res.sendFile(path.join(__dirname, "../public/login.html"));
+    }
+  });
 };
