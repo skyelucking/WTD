@@ -18,7 +18,7 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
-    console.log(req.body);
+    //console.log(req.body);
     db.User.create({
       email: req.body.email,
       password: req.body.password,
@@ -55,20 +55,20 @@ module.exports = function(app) {
     }
   });
 
-  // getting all the habits 
-  app.get("/api/all", function(req,res){
-    db.habits_selected.findAll({}).then(function(){
-      res.json(results);
-    })
-  } )
+  app.get("/api/all", function (req, res) {
+    db.habits_selected.findAll({}).then(function(habit) {
+      res.json(habit);
+    });
+     
+  });
 
   app.post("/api/add_habit", (req, res) => {
-    console.log(req.body);
+    //console.log(req.body);
     db.habits_selected
       .create({
         habitID: req.body.habitID,
         habitName: req.body.habitName,
-        categoryID: req.categoryID,
+        categoryID: req.body.categoryID,
         userID: req.body.userID
       })
       .then(() => {
@@ -81,7 +81,7 @@ module.exports = function(app) {
   });
 
   app.post("/api/tracked_habits", (req, res) => {
-    console.log(req);
+    //console.log(req);
     db.completed_habits
       .create({
         completedID: req.body.completedID,

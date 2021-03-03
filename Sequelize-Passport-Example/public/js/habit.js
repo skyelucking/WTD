@@ -1,6 +1,7 @@
 $(document).ready(() => {
   let dataOptions;
   let userId;
+  let habits = []
 
   $(".category").hover(function() {
     const contentAsset = $(this).attr("data-info");
@@ -11,13 +12,15 @@ $(document).ready(() => {
     userId = data.id;
   });
 
-  // making a new chirp object
+  // making a new object
+  
   
   $(".option").click(function () {
+ 
     let obj;
     obj = {
       habitName: $(this).attr("data-habit-option"),
-      categoryID: dataOptions.category,
+      categoryID: dataOptions.value,
       userID: userId
     };
 
@@ -25,19 +28,23 @@ $(document).ready(() => {
 
     $.post("/api/add_habit", obj)
       .then(() => {
-        alert("created")
-        // var row = $("<div>");
-        // row.addClass("habits");
+        var row = $("<div>");
+        let item = $('<div>')
+        row.addClass("habits");
+        item.text(obj.habitName)
+        
+        row.append(item)
 
-        // row.append("<p>" + obj.habitName + " </p>")
-
-        // $(".container").append(row)
+        $("body").append(row)
     });
 
   });
 
+  $.get("/api/all").then(data => {
+    habits = data
+    console.log(habits)
+  });
 
- 
 
 
 });
