@@ -42,12 +42,13 @@ module.exports = function(app) {
     } else {
       res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
+        fName: req.user.fName
       });
     }
   });
   // Route to get all the habits in the database
-  app.get("/api/all", function (req, res) {
+  app.get("/api/all/", function (req, res) {
     db.habits_selected.findAll({}).then(function(habit) {
       res.json(habit);
     });

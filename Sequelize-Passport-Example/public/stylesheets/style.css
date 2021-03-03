@@ -5,7 +5,8 @@ border-color: #DDA797;
 
 #headerImg{
   width: 70%; 
-  height: 100%
+  height: 100%;
+  margin-bottom: 100px;
 }
 .WTDbutton{
   margin: 10px;
@@ -85,4 +86,18 @@ body {
   -webkit-border-radius: 6px 0 6px 6px;
   -moz-border-radius: 6px 0 6px 6px;
   border-radius: 6px 0 6px 6px;
+}
+
+/* .table-div{
+  margin-top: 100px;
+} */
+
+.table-columns{
+  background-color:#DDA797 ;
+}
+
+.card{
+  margin-bottom: 5px;
+  width: 14rem;
+  border: 1px solid #DDA797;
 }
