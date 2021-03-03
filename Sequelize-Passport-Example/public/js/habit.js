@@ -1,7 +1,7 @@
 $(document).ready(() => {
   let dataOptions;
   let userId;
-  let habits = []
+  let habits = [];
 
   $(".category").hover(function() {
     const contentAsset = $(this).attr("data-info");
@@ -14,17 +14,13 @@ $(document).ready(() => {
 
   // making a new object
   
-  
   $(".option").click(function () {
- 
     let obj;
     obj = {
       habitName: $(this).attr("data-habit-option"),
       categoryID: dataOptions.value,
       userID: userId
     };
-
-    console.log(obj)
 
     $.post("/api/add_habit", obj)
       .then(() => {
