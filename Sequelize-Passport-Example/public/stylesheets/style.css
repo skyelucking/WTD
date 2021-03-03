@@ -86,3 +86,7 @@ body {
   -moz-border-radius: 6px 0 6px 6px;
   border-radius: 6px 0 6px 6px;
 }
+
+.table-div{
+  margin-top: 100px;
+}
