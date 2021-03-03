@@ -1,6 +1,7 @@
 $(document).ready(() => {
   let dataOptions;
   let userId;
+  let habits = [];
 
   $(".category").hover(function() {
     const contentAsset = $(this).attr("data-info");
@@ -11,13 +12,35 @@ $(document).ready(() => {
     userId = data.id;
   });
 
-  const obj = [];
-  $(".option").click(function() {
-    obj.push({
+  // making a new object
+  
+  $(".option").click(function () {
+    let obj;
+    obj = {
       habitName: $(this).attr("data-habit-option"),
-      categoryID: dataOptions.category,
+      categoryID: dataOptions.value,
       userID: userId
+    };
+
+    $.post("/api/add_habit", obj)
+      .then(() => {
+        var row = $("<div>");
+        let item = $('<div>')
+        row.addClass("habits");
+        item.text(obj.habitName)
+        
+        row.append(item)
+
+        $("body").append(row)
     });
-    console.log(obj);
+
   });
+
+  $.get("/api/all").then(data => {
+    habits = data
+    console.log(habits)
+  });
+
+
+
 });
