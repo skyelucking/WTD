@@ -24,11 +24,11 @@ $(document).ready(() => {
 
     $.post("/api/add_habit", obj)
       .then(() => {
-        var row = $("<div>");
+        var row = $("<div>").css("text-align", "center",);
         let item = $('<div>')
-        row.addClass("habits");
+        row.addClass("habits")
         item.text(obj.habitName)
-        
+              
         row.append(item)
 
         $("body").append(row)
