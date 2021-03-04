@@ -62,7 +62,14 @@ module.exports = function(app) {
         habitID: req.body.habitID,
         habitName: req.body.habitName,
         categoryID: req.body.categoryID,
-        userID: req.body.userID
+        userID: req.body.userID, 
+        Monday: req.body.Monday, 
+        Tuesday: req.body.Tuesday, 
+        Wednesday: req.body.Wednesday, 
+        Thursday: req.body.Thursday, 
+        Friday: req.body.Friday, 
+        Saturday: req.body.Saturday, 
+        Sunday: req.body.Sunday, 
       })
       .then(() => {
         res.send(200);

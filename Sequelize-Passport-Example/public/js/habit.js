@@ -41,7 +41,14 @@ $(document).ready(() => {
     obj = {
       habitName: $(this).attr("data-habit-option"),
       categoryID: dataOptions.value,
-      userID: userId
+      userID: userId,
+      Monday: true,
+      Tuesday: true,
+      Wednesday: true,
+      Thursday: true,
+      Friday: true,
+      Saturday: true,
+      Sunday: true,
     };
     // rendering the items to the page
     $.post("/api/add_habit", obj)
