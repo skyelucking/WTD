@@ -80,21 +80,5 @@ module.exports = function(app) {
       });
   });
 
-  app.post("/api/tracked_habits", (req, res) => {
-    //console.log(req);
-    db.completed_habits
-      .create({
-        completedID: req.body.completedID,
-        habitSelectedID: req.body.habitSelectedID,
-        userId: req.body.userId,
-        date: req.body.date
-      })
-      .then(() => {
-        res.send(200);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(401).json(err);
-      });
-  });
+  
 }; // end of export 

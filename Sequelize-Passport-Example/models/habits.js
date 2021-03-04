@@ -54,15 +54,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   );
 
-  HabitsSelected.associate = models => {
-    HabitsSelected.hasMany(models.completed_habits, {
-      foreignKey: "userID",
-      onDelete: "CASCADE",
-      onUpdate: "CASCADE"
-    });
-
-    HabitsSelected.belongsTo(models.User, { foreignKey: "userID" });
-  };
+  
 
   return HabitsSelected;
 };
