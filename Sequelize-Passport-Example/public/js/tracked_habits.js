@@ -1,19 +1,14 @@
 $(document).ready(() => {
   let userId;
   let habits = [];
-
-
   $.get("/api/user_data").then(data => {
     userId = data.id;
   });
-
   $.get("/api/all").then(data =>{
     habits = data;
     generateRows(habits)
     generateMarkedComplete(habits)
   });
-
-  
   // need a function to create a row into the body of the table
   function generateRows(arr){
     arr.forEach(item => {
@@ -32,7 +27,6 @@ $(document).ready(() => {
           let tableData = $("<td>");
           let form = $("<div>").addClass("form-check")
           let input = $("<input>").addClass("form-check-input").prop("type", "checkbox");
-
           form.append(input)
           tableData.append(form)
           tableRow.append(tableData)
@@ -41,17 +35,7 @@ $(document).ready(() => {
       }
     }) 
   } // end of function
-
-  function generateMarkedComplete(arr){
-    arr.forEach(item => {
-      // create the card dive
-      let boxDiv = $('<div>').addClass("card");
-      $(".complete").append(boxDiv)
-    });
-  } // end of function
-
-
+  
 }); // end of export
-
 // Notes:
 // 1) This table is not responsive lol

@@ -62,7 +62,14 @@ module.exports = function(app) {
         habitID: req.body.habitID,
         habitName: req.body.habitName,
         categoryID: req.body.categoryID,
-        userID: req.body.userID
+        userID: req.body.userID, 
+        Monday: req.body.Monday, 
+        Tuesday: req.body.Tuesday, 
+        Wednesday: req.body.Wednesday, 
+        Thursday: req.body.Thursday, 
+        Friday: req.body.Friday, 
+        Saturday: req.body.Saturday, 
+        Sunday: req.body.Sunday, 
       })
       .then(() => {
         res.send(200);
@@ -73,16 +80,14 @@ module.exports = function(app) {
       });
   });
 
-  app.post("/api/tracked_habits", (req, res) => {
-    //console.log(req);
-    db.completed_habits
-      .create({
-        completedID: req.body.completedID,
-        habitSelectedID: req.body.habitSelectedID,
-        userId: req.body.userId,
-        date: req.body.date
-      })
+  app.delete("/api/delete_habit", (req, res) => {
+    console.log(req.body);
+    db.habits_selected
+      .destroy({
+        where: {habitID: req.body.habitID},
+        })
       .then(() => {
+        
         res.send(200);
       })
       .catch(err => {
@@ -90,4 +95,6 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
+
+  
 }; // end of export 
