@@ -16,9 +16,11 @@ $(document).ready(() => {
         //table row
         let tableRow = $("<tr>")
         $("tbody").append(tableRow);
+
         // create table head
         let tableHead = $("<th>").attr("scope", "row").text(item.habitName)
         tableRow.append(tableHead);
+
         // create table data
         for (let i = 0; i < 7; i++) {
           let count = i;
@@ -31,7 +33,7 @@ $(document).ready(() => {
           count++;
         }
       }
-    })
+    }) 
   } // end of function
   function generateMarkedComplete(arr){
     arr.forEach(item => {

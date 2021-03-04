@@ -14,7 +14,7 @@ $(document).ready(() => {
       habits = data;
       console.log(habits)
 
-    displayHabits(habits); 
+      displayHabits(habits); 
   })
 
   function displayHabits(arr){
