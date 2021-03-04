@@ -35,13 +35,7 @@ $(document).ready(() => {
       }
     }) 
   } // end of function
-  function generateMarkedComplete(arr){
-    arr.forEach(item => {
-      // create the card dive
-      let boxDiv = $('<div>').addClass("card");
-      $(".complete").append(boxDiv)
-    });
-  } // end of function
+  
 }); // end of export
 // Notes:
 // 1) This table is not responsive lol

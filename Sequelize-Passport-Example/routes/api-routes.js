@@ -80,5 +80,21 @@ module.exports = function(app) {
       });
   });
 
+  app.delete("/api/delete_habit", (req, res) => {
+    console.log(req.body);
+    db.habits_selected
+      .destroy({
+        where: {habitID: req.body.habitID},
+        })
+      .then(() => {
+        
+        res.send(200);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(401).json(err);
+      });
+  });
+
   
 }; // end of export 
