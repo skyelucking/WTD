@@ -7,7 +7,7 @@ $(document).ready(() => {
   $.get("/api/all").then(data =>{
     habits = data;
     generateRows(habits)
-    generateMarkedComplete(habits)
+   
   });
   // need a function to create a row into the body of the table
   function generateRows(arr){
