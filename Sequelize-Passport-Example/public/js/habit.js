@@ -7,8 +7,9 @@ $(document).ready(() => {
   .css("width", "40%")
   .css("padding", "0px")
   .css("align-content", "center")
-  .css("border-style", "solid",)
+  .css("border-style", "solid")
   .css( "border-color", "white")
+  .css("color", "#D99830")
   .css( "margin-bottom", "20px");
 
   let addAHabit = $("#addAHabit");
@@ -43,6 +44,7 @@ $(document).ready(() => {
           let deleteHabit= $("<div>")
           .html('<i class="fas fa-trash-alt"></i>')
           .addClass("btn")
+          .css("color", "#DDA797")
           .attr("data-habitID", item.habitID);
           
          
