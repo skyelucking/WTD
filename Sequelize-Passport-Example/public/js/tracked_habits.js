@@ -1,6 +1,8 @@
+
 $(document).ready(() => {
   let userId;
   let habits = [];
+
   $.get("/api/user_data").then(data => {
     userId = data.id;
   });
@@ -35,6 +37,48 @@ $(document).ready(() => {
       }
     }) 
   } // end of function
+  
+  let randomQuotes = [
+    {
+      quote: "Get into the habit of asking yourself 'Does this support the life I'm trying to create?'"
+    },
+    {
+      quote: "'Motivation' is what gets you started, 'Habit' is what keeps you going."
+    },
+    {
+      quote: "Good habits are as addictive as bad habits, but much more rewarding."
+    },
+    {
+      quote: "You are the most valuable investment you will ever make!"
+    },
+    {
+      quote: "You'll never change your life until you change something you do daily. - John Maxwell"
+    },
+    {
+      quote: "Success doesn't come from what you do occasionally. It comes from what you do consistently. - Marie Forleo"
+    },
+    {
+      quote: "Remember that the reason you're doing this is to make your life better."
+    },
+    {
+      quote: "Everything is hard before it is easy. - Goethe"
+    },
+    {
+      quote: "The secret of your future is hidden in your daily routine."
+    
+    },
+    {
+      quote: "Do literally whatever makes you happy!"
+    },
+  ]
+
+  getRandomValue()
+  function getRandomValue(){
+    let num = Math.floor(Math.random() * 10);
+    $('.randomQuote').text(randomQuotes[num].quote)
+  }
+
+  
   
 }); // end of export
 // Notes:

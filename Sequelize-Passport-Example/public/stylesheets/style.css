@@ -160,3 +160,10 @@ body {
 .option:hover, .category:hover, .welcome {
   color: #D99830;
 }
+
+.randomQuote {
+  margin-top: 20px;
+  color: #D99830;
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+}
