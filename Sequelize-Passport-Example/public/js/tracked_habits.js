@@ -26,7 +26,7 @@ $(document).ready(() => {
           let count = i;
           let tableData = $("<td>");
           let form = $("<div>").addClass("form-check")
-          let input = $("<input>").addClass("form-check-input").prop("type", "checkbox");
+           let input = $("<input>").addClass("form-check-input").prop("type", "checkbox");
           form.append(input)
           tableData.append(form)
           tableRow.append(tableData)

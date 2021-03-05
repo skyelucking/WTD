@@ -2,7 +2,15 @@ $(document).ready(() => {
   let dataOptions;
   let userId;
   let habits = [];
-  let habitsDisplay = $("<div>").addClass("row text-center");
+   
+  let habitsDisplay = $("<div>").addClass("container text-center ")
+  .css("width", "40%")
+  .css("padding", "0px")
+  .css("align-content", "center")
+  .css("border-style", "solid",)
+  .css( "border-color", "white")
+  .css( "margin-bottom", "20px");
+
   let addAHabit = $("#addAHabit");
 
   // grabbing the user id
@@ -14,13 +22,32 @@ $(document).ready(() => {
 
   function displayHabits(arr) {
     habitsDisplay.empty();
+        
+    let listHeader = $("<div>")
+    .html('<img src="./img/list_header2.png" text-align="center" width="100%" margin="0px" padding="0px">');
+        
     arr.forEach((item) => {
       if (userId === item.userID) {
-        let eachHabit = $("<a>")
+        
+        let eachHabit = $("<div>")
           .text(item.habitName)
-          .addClass("col-3")
+          .attr("data-habitID", item.habitID)
+          .css("width", "100%", )
+          .css( "background-color", "white")
+          .css("font-family", "Quicksand")
+          .css("font-size", "1.25em", )
+          .css("padding", "0px", )
+          .css("margin", "0px", )
+          ;
+        
+          let deleteHabit= $("<div>")
+          .html('<i class="fas fa-trash-alt"></i>')
+          .addClass("btn")
           .attr("data-habitID", item.habitID);
-        eachHabit.click(function () {
+          
+         
+
+          deleteHabit.click(function () {
           $.ajax({
             url: "api/delete_habit",
             type: "DELETE",
@@ -34,6 +61,8 @@ $(document).ready(() => {
             );
         });
         habitsDisplay.append(eachHabit);
+        eachHabit.append(deleteHabit).append("<hr>");
+        habitsDisplay.prepend(listHeader);
       }
     });
     $("body").append(habitsDisplay);
