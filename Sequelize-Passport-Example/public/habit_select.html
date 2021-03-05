@@ -21,7 +21,7 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/logout"> <img src="img/log_out.png" class="navButton"></a> 
           <a class="navbar-brand" href="/manage"> <img src="img/manage_button.png" class="navButton"></a> 
-          <a class="navbar-brand" href="/manage"> <img src="img/add_habit.png" class="navButton"></a>
+          <a id="addAHabit" class="navbar-brand" href="/manage" data-toggle="modal" data-target="#exampleModal"> <img src="img/add_habit.png" class="navButton"></a>
           <a class="navbar-brand" href="/track"> <img src="img/track_button.png" class="navButton"></a>
         </div>
         
@@ -99,13 +99,44 @@
         </ul>
       </div>
     </div>
+    <!-- Making add habit a form to fill out -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Let's add a habit!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="inputHabitCategory">Habit Category</label>
+                <input type="text" class="form-control" id="inputHabitCategory" aria-describedby="emailHelp"
+                  placeholder="examples: Health, Wellness...">
+              </div>
+              <div class="form-group">
+                <label for="inputHabit">Habit to add</label>
+                <input type="text" class="form-control" id="inputHabit" placeholder="examples: running, make bed...">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="addCustomHabit" type="click" class="btn btn-secondary">Save Habit</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="navbar">
-      <nav class="navbar-footer fixed-bottom" >
+      <footer class="navbar-footer fixed-bottom" >
         <div class="container justify-content-center" style="vertical-align: top;">
               <b>Created by:</b><a class="nav-link" href="https://github.com/skyelucking" target="_blank">Kameshia Ingram <i class="fab fa-github-square"></i></a>and<a class="nav-link" href="https://github.com/skyelucking" target="_blank">Skye Lucking <i class="fab fa-github-square"></i></a><br>
-     </div>
-    </nav>
+        </div>
+      </footer>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
