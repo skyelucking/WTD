@@ -27,18 +27,17 @@ body {
   margin-bottom: 5px;
   padding: 2px;
 }
-.navbar-footer {
+.footer {
   font-size: 20px;
-  margin-bottom: 5px;
   padding: 2px;
   vertical-align: top;
 }
 
-.nav-link {
+.footer-link {
   color: #212121;
 }
 
-.nav-link:hover {
+.footer-link:hover {
   color: #DDA797;
 }
 .navButton {
@@ -51,6 +50,7 @@ body {
 .navbar-brand{
   padding: 2px;
 }
+
 .navbar-default{
   padding: 2px;
   background-color: #ffffff;
@@ -68,8 +68,6 @@ body {
   max-height: 30px;
   vertical-align: top;
 }
-
-
 
 .header-img{
   width: 100%;
@@ -125,16 +123,6 @@ body {
   border-radius: 6px 0 6px 6px;
 }
 
-/* .table-div{
-  margin-top: 100px;
-} */
-
 .table-columns{
   background-color:#DDA797 ;
-}
-
-.card{
-  margin-bottom: 5px;
-  width: 14rem;
-  border: 1px solid #DDA797;
 }

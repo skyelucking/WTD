@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <title>Members - Winning the Day</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
-    />
-    <link href="/../stylesheets/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="/stylesheets/style.css" rel="stylesheet" />
   </head>
 
   <body>
     <nav class="navbar navbar-default">
       <div class="container-fluid justify-content-left">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/logout"> <img src="img/log_out.png" class="navButton"></a> 
-          <a class="navbar-brand" href="/manage"> <img src="img/manage_button.png" class="navButton"></a> 
+          <a class="navbar-brand" href="/logout"> <img src="img/log_out.png" class="navButton"></a>
+          <a class="navbar-brand" href="/manage"> <img src="img/manage_button.png" class="navButton"></a>
           <a class="navbar-brand" href="/manage"> <img src="img/add_habit.png" class="navButton"></a>
           <a class="navbar-brand" href="/track"> <img src="img/track_button.png" class="navButton"></a>
         </div>
-        
       </div>
     </nav>
+
     <div class="col-12 d-flex justify-content-center text-center">
       <img src="./img/Winning-the-Day.png" id="headerImg" />
     </div>
 
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-md-offset-3 text-center">
+        <div class="col text-center">
           <h2>Welcome <span class="member-name"></span></h2>
         </div>
       </div>
     </div>
-    <div class="col-6 d-flex justify-content-center text-center">
+    <div class="col d-flex justify-content-center text-center">
       <a href="/manage"><button id="manageHabits" class="WTDbutton"><img src="./img/WTD_manage.png" /></button></a>
-      <a href="/track"><button id="trackHabits"class="WTDbutton"><img src="./img/WTD_track.png" /></button></a>
+      <a href="/track"><button id="trackHabits" class="WTDbutton"><img src="./img/WTD_track.png" /></button></a>
     </div>
-    <div class="navbar">
-      <nav class="navbar-footer fixed-bottom" >
-        <div class="container justify-content-center" style="vertical-align: top;">
-              <b>Created by:</b><a class="nav-link" href="https://github.com/skyelucking" target="_blank">Kameshia Ingram <i class="fab fa-github-square"></i></a>and<a class="nav-link" href="https://github.com/skyelucking" target="_blank">Skye Lucking <i class="fab fa-github-square"></i></a><br>
-     </div>
-    </nav>
+
+    <footer class="footer fixed-bottom">
+      <div class="container text-center" style="vertical-align: top;">
+        <b>Created by:</b><a class="footer-link" href="https://github.com/skyelucking" target="_blank"> Kameshia Ingram
+          <i class="fab fa-github-square"></i></a>and<a class="footer-link" href="https://github.com/skyelucking"
+          target="_blank"> Skye Lucking <i class="fab fa-github-square"></i></a><br>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
   </body>
+
 </html>
