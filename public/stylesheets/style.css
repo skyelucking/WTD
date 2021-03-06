@@ -10,12 +10,11 @@ border-color: #DDA797;
 
 #headerImg{
   width: 80%; 
-  height: 100%;
+  height: 90%;
   margin-top: 5px;
   margin-bottom: 2px;
-  border-bottom: 2px;
-  
 }
+
 .WTDbutton{
   margin: 10px;
 }
@@ -29,11 +28,11 @@ body {
   background-color: #f7f2e9;
   font-size: .8em;
 }
-.nav-bar {
+/* .navbar {
   font-size: 20px;
   margin-bottom: 5px;
   padding: 2px;
-}
+} */
 .navbar-footer {
   margin-bottom: 5px;
   padding: 2px;
@@ -46,18 +45,12 @@ body {
   vertical-align: top;
 }
 
-.footer-link:hover {
-  color: #DDA797;
-}
 .navButton {
   border: #070707;
   max-height: 1.5em;
   margin: 0px;
   padding: 0px;
   align-self: center;
-}
-.navbar-brand{
-  padding: 2px;
 }
 
 .navbar-default{
@@ -79,10 +72,11 @@ body {
   margin-top: 10px;
 }
 
-.header-img{
-  width: 100%;
+#headerImg {
+  width: 90%;
   padding-left: 20px;
   padding-right:20px;
+  padding-bottom: 20px
 }
 
 .dropdown-submenu {
@@ -147,5 +141,21 @@ body {
 }
 
 .table-columns{
-  background-color:#DDA797 ;
+  background-color:#DDA797;
+  color: white ;
+}
+
+.card{
+  margin-bottom: 5px;
+  width: 14rem;
+  border: 1px solid #DDA797;
+}
+
+.option, .category {
+  color: #DDA797;
+
+}
+
+.option:hover, .category:hover, .welcome {
+  color: #D99830;
 }

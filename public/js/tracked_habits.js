@@ -18,7 +18,7 @@ $(document).ready(() => {
         $("tbody").append(tableRow);
 
         // create table head
-        let tableHead = $("<th>").attr("scope", "row").text(item.habitName)
+          let tableHead = $("<th>").attr("scope", "row").text(item.habitName).css("color", "#D99830")
         tableRow.append(tableHead);
 
         // create table data
