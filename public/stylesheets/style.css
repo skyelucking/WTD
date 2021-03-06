@@ -8,11 +8,19 @@ border: 10px;
 border-color: #DDA797;
 }
 
-#headerImg{
-  width: 80%; 
-  height: 90%;
+.headerImg{
+  width: 70%; 
+  height: 70%;
   margin-top: 5px;
   margin-bottom: 2px;
+  padding-bottom: 0px;
+}
+.catImg{
+  width: 100%; 
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 0px;
+  align-content: center;
 }
 
 .WTDbutton{
@@ -72,12 +80,12 @@ body {
   margin-top: 10px;
 }
 
-#headerImg {
+/* #headerImg {
   width: 90%;
   padding-left: 20px;
   padding-right:20px;
   padding-bottom: 20px
-}
+} */
 
 .dropdown-submenu {
   position: relative;
