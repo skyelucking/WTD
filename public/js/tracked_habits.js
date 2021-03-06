@@ -54,7 +54,7 @@ $(document).ready(() => {
           let input = $("<input>")
             .addClass("form-check-input")
             .prop("type", "checkbox")
-            .prop("checked", dayMap[i]).css("background-color", categoryMap[item.categoryID])
+            .prop("unchecked", dayMap[i]).css("background-color", categoryMap[item.categoryID])
             ;
           form.append(input);
           tableData.append(form);

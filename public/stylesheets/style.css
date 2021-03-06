@@ -9,8 +9,8 @@ border-color: #DDA797;
 }
 
 .headerImg{
-  width: 70%; 
-  height: 70%;
+  width: 60%; 
+  height: 60%;
   margin-top: 5px;
   margin-bottom: 2px;
   padding-bottom: 0px;
@@ -55,10 +55,11 @@ body {
 
 .navButton {
   border: #070707;
-  max-height: 1.5em;
-  margin: 0px;
+  max-height: 2em;
+  margin-bottom: 5px;
   padding: 0px;
   align-self: center;
+  vertical-align: top;
 }
 
 
