@@ -96,5 +96,28 @@ module.exports = function(app) {
       });
   });
 
+
+  // Route to Update habits to send to database
+  // app.put("/api/update_habit", (req, res) => {
+  //   console.log(req.body);
+  //   db.habits_selected
+  //     .update({
+  //       where: {habitID: req.body.habitID},
+  //       Monday: req.body.Monday, 
+  //       Tuesday: req.body.Tuesday, 
+  //       Wednesday: req.body.Wednesday, 
+  //       Thursday: req.body.Thursday, 
+  //       Friday: req.body.Friday, 
+  //       Saturday: req.body.Saturday, 
+  //       Sunday: req.body.Sunday, 
+  //     })
+  //     .then(() => {
+  //       res.send(200);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //       res.status(401).json(err);
+  //     });
+  // });
   
 }; // end of export 

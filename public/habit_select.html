@@ -18,6 +18,7 @@
   </head>
 
   <body class="body">
+    
     <nav class="navbar navbar-default">
       <div class="container-fluid justify-content-left">
         <div class="navbar-header">
@@ -29,79 +30,88 @@
         
       </div>
     </nav>
+    
     <div class="col-12 d-flex justify-content-center text-center">
       <img src="./img/WTD_HeaderB.png" class="headerImg">
     </div>
     <hr>
-    <div class="container my-4 d-flex justify-content-center text-center">
+    <div class="container-fluid justify-content-center" style="margin-bottom: 0px">
+      <div class="row" style="margin-top: 0px">
+        <div class="col-12 text-center" style="margin-top: 0px"><div class="container my-4 d-flex " style="margin-top: 0px">
 
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false" style="background-color: #DDA797 ;">
-          Select Your Habits
-        </button>
-        <!-- Exercise -->
-        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" >
-          <li class="dropdown-submenu">
-            <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Exercise", "value":1}' >Exercise</a>
-            <ul class="dropdown-menu">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style="background-color: #DDA797 ;">
+              Select Your Habits
+            </button>
+            <!-- Exercise -->
+            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" >
               <li class="dropdown-submenu">
-              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Walking">Walking</a></li>
-              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Yoga">Yoga</a></li>
+                <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Exercise", "value":1}' >Exercise</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-submenu">
+                  <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Walking">Walking</a></li>
+                  <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Yoga">Yoga</a></li>
+                </ul>
+              </li>
+              <!-- Organize -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Organize", "value":2}' >Organization</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option= "To-do List">Daily To-Do List</a></li>
+                  <li class="dropdown-submenu">
+                  <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Declutter">Declutter Car</a></li>
+                  <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Unsubscribe">Unsubscribe From Newsletters</a></li>
+                </ul>
+              </li>
+              <!-- Budgeting -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Budget", 
+                "value":3}'>Budgeting</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option= "Save $50">Save $50</a></li>
+                  <li class="dropdown-submenu">
+                  <li class="dropdown-item"><a class="option" href="#" data-habit-option= "No Spend">No Spending</a></li>
+                  <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Eat Out">Don't eat out</a></li>
+                </ul>
+              </li>
+              <!-- Self-Care -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Self-Care", "value":4}'>Self-Care</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option= "Meditate">Meditate</a></li>
+                  <li class="dropdown-submenu">
+                  <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Journal">Journal</a></li>
+                </ul>
+              </li>
+              <!-- Healthy Eating -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Healthy Eating", "value":5}'>Healthy Eating</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option= "Drink Water">Drink Water</a></li>
+                  <li class="dropdown-submenu">
+                  <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Salad">Eat Salad for a Meal</a></li>
+                  <li class="dropdown-item"><a class="option" href="#" data-habit-option= "No Sweets">No Sweets</a></li>
+                  <li class="dropdown-submenu">
+                </ul>
+              </li>
+              <!-- Learning -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Learning", "value":6}'>Learning</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option="Homework">Homework</a></li>
+                  <li class="dropdown-submenu">
+                  <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Tutorial">Tutorial Video</a></li>
+              </li>
             </ul>
-          </li>
-          <!-- Organize -->
-          <li class="dropdown-submenu">
-            <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Organize", "value":2}' >Organization</a>
-            <ul class="dropdown-menu">
-              <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option= "To-do List">Daily To-Do List</a></li>
-              <li class="dropdown-submenu">
-              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Declutter">Declutter Car</a></li>
-              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Unsubscribe">Unsubscribe From Newsletters</a></li>
-            </ul>
-          </li>
-          <!-- Budgeting -->
-          <li class="dropdown-submenu">
-            <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Budget", 
-            "value":3}'>Budgeting</a>
-            <ul class="dropdown-menu">
-              <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option= "Save $50">Save $50</a></li>
-              <li class="dropdown-submenu">
-              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "No Spend">No Spending</a></li>
-              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Eat Out">Don't eat out</a></li>
-            </ul>
-          </li>
-          <!-- Self-Care -->
-          <li class="dropdown-submenu">
-            <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Self-Care", "value":4}'>Self-Care</a>
-            <ul class="dropdown-menu">
-              <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option= "Meditate">Meditate</a></li>
-              <li class="dropdown-submenu">
-              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Journal">Journal</a></li>
-            </ul>
-          </li>
-          <!-- Healthy Eating -->
-          <li class="dropdown-submenu">
-            <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Healthy Eating", "value":5}'>Healthy Eating</a>
-            <ul class="dropdown-menu">
-              <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option= "Drink Water">Drink Water</a></li>
-              <li class="dropdown-submenu">
-              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Salad">Eat Salad for a Meal</a></li>
-              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "No Sweets">No Sweets</a></li>
-              <li class="dropdown-submenu">
-            </ul>
-          </li>
-          <!-- Learning -->
-          <li class="dropdown-submenu">
-            <a class="dropdown-item category" tabindex="-1" href="#" data-info='{"category": "Learning", "value":6}'>Learning</a>
-            <ul class="dropdown-menu">
-              <li class="dropdown-item"><a class="option" tabindex="-1" href="#" data-habit-option="Homework">Homework</a></li>
-              <li class="dropdown-submenu">
-              <li class="dropdown-item"><a class="option" href="#" data-habit-option= "Tutorial">Tutorial Video</a></li>
-          </li>
-        </ul>
+          </div>
+          <div class="col-10 justify-content-left" id="selHabs">
+          </div>
+        </div></div>
+        <div class="col-10 justify-content-left" id="selHabs">
       </div>
     </div>
+    
     <!-- Making add habit a form to fill out -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
