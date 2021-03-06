@@ -17,20 +17,20 @@ $(document).ready(() => {
         $("tbody").append(tableRow);
 
         const categoryMap = {
-          1: "blue",
-          2: "purple",
-          3: "green",
-          4: "aqua",
-          5: "yellow",
-          6: "orange",
-          7: "black",
+          1: "#F1dadc",
+          2: "#Fee5c1",
+          3: "#E5e1df",
+          4: "#f5b2ba",
+          5: "#A59793",
+          6: "#F9d499",
+          7: "#Efd1d1",
         };
 
         // create table head
         let tableHead = $("<th>")
           .attr("scope", "row")
           .text(item.habitName)
-          .css("color", "#D99830")
+          .css("color", "#424242")
           .css("background-color", categoryMap[item.categoryID]);
         tableRow.append(tableHead);
 
@@ -50,11 +50,12 @@ $(document).ready(() => {
         for (let i = 0; i < 7; i++) {
           let count = i;
           let tableData = $("<td>");
-          let form = $("<div>").addClass("form-check");
+          let form = $("<div>").addClass("form-check").css("text-align", "center");
           let input = $("<input>")
             .addClass("form-check-input")
             .prop("type", "checkbox")
-            .prop("checked", dayMap[i]);
+            .prop("checked", dayMap[i]).css("background-color", categoryMap[item.categoryID])
+            ;
           form.append(input);
           tableData.append(form);
           tableRow.append(tableData);
