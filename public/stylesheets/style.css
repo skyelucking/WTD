@@ -39,7 +39,7 @@ body {
   vertical-align: top;
 }
 
-.nav-link {
+.footer-link {
   color: #212121;
   padding: 0px;
   vertical-align: top;
@@ -52,7 +52,6 @@ body {
   padding: 0px;
   align-self: center;
 }
-
 
 .navbar-default{
   padding: 2px;
