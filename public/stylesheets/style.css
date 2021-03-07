@@ -8,11 +8,19 @@ border: 10px;
 border-color: #DDA797;
 }
 
-#headerImg{
-  width: 80%; 
-  height: 90%;
+.headerImg{
+  width: 60%; 
+  height: 60%;
   margin-top: 5px;
   margin-bottom: 2px;
+  padding-bottom: 0px;
+}
+.catImg{
+  width: 100%; 
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 0px;
+  align-content: center;
 }
 
 .WTDbutton{
@@ -26,7 +34,7 @@ form.login {
 
 body {
   background-color: #f7f2e9;
-  font-size: .8em;
+  font-size: 1.2em;
 }
 
 .navbar-footer {
@@ -43,10 +51,11 @@ body {
 
 .navButton {
   border: #070707;
-  max-height: 1.5em;
-  margin: 0px;
+  max-height: 2em;
+  margin-bottom: 5px;
   padding: 0px;
   align-self: center;
+  vertical-align: top;
 }
 
 .navbar-default{
@@ -68,12 +77,12 @@ body {
   margin-top: 10px;
 }
 
-#headerImg {
+/* #headerImg {
   width: 90%;
   padding-left: 20px;
   padding-right:20px;
   padding-bottom: 20px
-}
+} */
 
 .dropdown-submenu {
   position: relative;

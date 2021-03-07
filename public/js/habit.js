@@ -4,9 +4,9 @@ $(document).ready(() => {
   let habits = [];
    
   let habitsDisplay = $("<div>").addClass("container text-center ")
-  .css("width", "40%")
+  .css("width", "90%")
   .css("padding", "0px")
-  .css("align-content", "center")
+  .css("align-content", "left")
   .css("border-style", "solid")
   .css( "border-color", "white")
   .css("color", "#D99830")
@@ -67,7 +67,7 @@ $(document).ready(() => {
         habitsDisplay.prepend(listHeader);
       }
     });
-    $("body").append(habitsDisplay);
+    $("#selHabs").append(habitsDisplay);
   }
 
   function renderHabits() {
