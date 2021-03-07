@@ -33,11 +33,13 @@ $(document).ready(() => {
         window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
-      //.catch(handleLoginErr);
+    .catch(handleLoginErr);
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+    $("#alert .msg").text("Oh no! Try again!");
     $("#alert").fadeIn(500);
   }
+
+
 });

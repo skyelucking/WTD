@@ -3,6 +3,31 @@ const express = require("express");
 const session = require("express-session");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
+// const nodemailer = require('nodemailer');
+
+// const transporter = nodemailer.createTransport({
+//   service: "hotmail",
+//   auth: {
+//     user: "dailyhabittracker@outlook.com",
+//     pass: "March2021"
+//   }
+// });
+// const mailingOptions = {
+//   from: "dailyhabittracker@outlook.com",
+//   to: emailInput.val().trim(),
+//   subject: "Sending email with node.js!",
+//   text: "It is that simple!"
+// }
+
+// transporter.sendMail(mailingOptions, (err, info) => {
+//   if (err) {
+//     console.log(err);
+//     return;
+//   }
+//   console.log("Sent: " + info.response);
+// })
+
+
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
