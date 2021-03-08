@@ -128,26 +128,21 @@ module.exports = function(app) {
 
    // Route to Update habits to send to database
    app.put("/api/update_habit/:id", function (req, res) {
-    console.log(req.body);
-    db.habits_selected
-      .update({
-        
-        Monday: req.body.Monday, 
-        Tuesday: req.body.Tuesday, 
-        Wednesday: req.body.Wednesday, 
-        Thursday: req.body.Thursday,  
-        Friday: req.body.Friday,  
-        Saturday: req.body.Saturday, 
-        Sunday: req.body.Sunday, 
+      console.log(req.body.weekday);
+        console.log(req.body.checked);
+        console.log(req.body.habitID);
+    // console.log(req.body.weekday);
+    db.habits_selected.update({
+      [req.body.weekday]: req.body.checked 
+      
       },
       {
-        where: {
-          userID: req.body.userID
-          
-        }})
+      where: {
+        habitID: req.body.habitID
+        }
+    })
       .then(() => {
-        // console.log(res);
-        
+       
         res.send(200);
       })
       .catch(err => {

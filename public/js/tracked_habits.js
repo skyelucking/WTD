@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  let refresh_button = $('#refresh_button');
+  let refresh_button = $("#refresh_button");
   let userId;
   let habits = [];
   $.get("/api/user_data").then((data) => {
@@ -10,9 +10,7 @@ $(document).ready(() => {
     generateRows(habits);
   });
   // need a function to create a row into the body of the table
-  
-    
-  
+
   function generateRows(arr) {
     arr.forEach((item) => {
       if (userId === item.userID) {
@@ -30,25 +28,13 @@ $(document).ready(() => {
           7: "#Efd1d1",
         };
 
-        //  create Save icon
-        let updateHabit= $("<th>").css("text-align", "center")
-          .html('<i class="fas fa-save"></i>')
-          .addClass("btn")
-          .css("border", "0px")
-          .attr("data-habitID", item.habitID);
-        tableRow.prepend(updateHabit);
-
-        
-        
-        // create table head
+                // create table head
         let tableHead = $("<th>")
           .attr("scope", "row")
           .text(item.habitName)
           .css("color", "#424242")
           .css("background-color", categoryMap[item.categoryID]);
         tableRow.append(tableHead);
-
-        
 
         console.log(item);
 
@@ -74,68 +60,77 @@ $(document).ready(() => {
 
         // create table data
         for (let i = 0; i < 7; i++) {
+          let box_value = dayMap[i];
           let count = i;
-          let tableData = $("<td>")
-          .css("text-align", "center");
+          let tableData = $("<td>").css("text-align", "center");
           let form = $("<div>").addClass("form-check");
           let input = $("<input>")
             .addClass("form-check-input")
-            .attr("id", dayMapNames[i])
+            .attr("id", 'check_id' + dayMapNames[i] )
             .attr("data-weekday", dayMapNames[i])
-            .prop("type", "checkbox")
-            .prop("checked", dayMap[i])
+            .attr("type", "checkbox")
+            // .prop("checked", dayMap[i])
             .css("align-text", "center");
 
-            //How can I assign the value of the input checkbox rendered above to the correct column below? The Days of the week are column names and there is a boolean true and false as their value
-            // .form-check-input.click(function() {
-            //   $.ajax({
-            //     url: "api/update_habit/:" + id,
-            //     type: "PUT",
-            //     data: { habitID: item.habitID, 
-            //     weekday: id,
-            //     id: id
-                     
-            //   },
-            //     dataType: "json",
-            //   }).always(function() {
-            //     // renderHabits();
-            //   });
-            // });         
-            
+          
+            $('#check_id' + dayMapNames[i] ).change(function() {
+              console.log({
+                 checkbox: $('#check_idSaturday').val()
+               })
+            console.log($('#check_id' + dayMapNames[i] ).val() + " " + dayMapNames[i]  );
+            if ($('#check_id' + dayMapNames[i] ).val() == "on"){
+              let box_value = 1;
+              console.log("checked_value1 " + $('#check_id' + dayMapNames[i] ).val() + " box_value= " + box_value + " weekday= " + dayMapNames[i])
+            } else {
+            let box_value = 0;
+            console.log("checked_value2 " + $('#check_id' + dayMapNames[i] ).val() + " box_value= " + box_value + " weekday= " + dayMapNames[i])}
+            $.ajax({
+              url: "api/update_habit/:" + item.habitID,
+              type: "PUT",
+              data: {
+                habitID: item.habitID,
+                weekday: dayMapNames[i],
+                checked: box_value,
+              },
+              dataType: "json",
+            }).always(function() {
+              // generateRows(habits);
+            });
+          });
+
           form.append(input);
           tableData.append(form);
           tableRow.append(tableData).css("text-align", "center");
-        
 
           count++;
         }
       }
 
       // Refresh Week Button
-refresh_button.click(function(arr)  {
-  for (let i = 0; i < 7; i++) {
-     if (userId === item.userID) {   
-
-   $.ajax({
-     url: "api/refresh_week",
-     type: "PUT",
-     data: { userID: item.userID,
-    Sunday: false,
-    Monday: false,
-    Tuesday: false,
-    Wednesday: false,
-    Thursday: false,
-    Friday: false,
-    Saturday: false,
-    },
-     
-   }).always(function() {
-     // renderHabits();
-   });
- }};
-   
-    
-  } // end of function
-);
-})}
-}); // end of export
+      refresh_button.click(
+        function(arr) {
+          for (let i = 0; i < 7; i++) {
+            if (userId === item.userID) {
+              $.ajax({
+                url: "api/refresh_week",
+                type: "PUT",
+                data: {
+                  userID: item.userID,
+                  Sunday: false,
+                  Monday: false,
+                  Tuesday: false,
+                  Wednesday: false,
+                  Thursday: false,
+                  Friday: false,
+                  Saturday: false,
+                },
+              }).always(function() {
+                // renderHabits();
+              });
+            }
+          }
+        } // end of function
+      );
+      });
+    }})
+ // end of export
