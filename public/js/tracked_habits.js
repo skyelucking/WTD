@@ -64,6 +64,16 @@ $(document).ready(() => {
       }
     });
   } // end of function
+
+  generateRandomQuotes();
+
+  function generateRandomQuotes(){
+    let quotes = ["You will never change your life until you change something you do daily!", "Good habits are as addictive as bad habits but much more rewarding.", "Motivation is what gets your started, Habit is what keeps you going!", "If you want to master a habit, the key is to start with repetition, not perfection.", "Hey, you! Don't Give Up, Okay?", "You are the most valuable investment you will ever make.", "Success doesn't come from what you do occassionally. It comes from what you do consistently. "];
+
+    let randomIndex = Math.floor(Math.random() * quotes.length)
+
+    $(".randomQuotes").text(quotes[randomIndex])
+
+  }
 }); // end of export
-// Notes:
-// 1) This table is not responsive lol
+
