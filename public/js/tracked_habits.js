@@ -60,44 +60,50 @@ $(document).ready(() => {
 
         // create table data
         for (let i = 0; i < 7; i++) {
-          let box_value = dayMap[i];
+          
+          let box_value;
           let count = i;
           let tableData = $("<td>").css("text-align", "center");
           let form = $("<div>").addClass("form-check");
           let input = $("<input>")
-            .addClass("form-check-input")
-            .attr("id", 'check_id' + dayMapNames[i] )
-            .attr("data-weekday", dayMapNames[i])
-            .attr("type", "checkbox")
-            // .prop("checked", dayMap[i])
-            .css("align-text", "center");
+          .addClass("form-check-input")
+          .attr("id", 'check_id' + dayMapNames[i] )
+          .attr("data-weekday", dayMapNames[i])
+          .attr("data-habitID", item.habitID)
+          .attr("type", "checkbox")
+          .prop("checked", dayMap[i])
+          .css("align-text", "center");
 
           
-            $('#check_id' + dayMapNames[i] ).change(function() {
-              console.log({
-                 checkbox: $('#check_idSaturday').val()
-               })
-            console.log($('#check_id' + dayMapNames[i] ).val() + " " + dayMapNames[i]  );
-            if ($('#check_id' + dayMapNames[i] ).val() == "on"){
-              let box_value = 1;
-              console.log("checked_value1 " + $('#check_id' + dayMapNames[i] ).val() + " box_value= " + box_value + " weekday= " + dayMapNames[i])
-            } else {
-            let box_value = 0;
-            console.log("checked_value2 " + $('#check_id' + dayMapNames[i] ).val() + " box_value= " + box_value + " weekday= " + dayMapNames[i])}
-            $.ajax({
-              url: "api/update_habit/:" + item.habitID,
-              type: "PUT",
-              data: {
-                habitID: item.habitID,
-                weekday: dayMapNames[i],
-                checked: box_value,
-              },
-              dataType: "json",
-            }).always(function() {
-              // generateRows(habits);
-            });
+          $('#check_id' + dayMapNames[i] ).change(function() {
+            console.log({
+              habitID: $(this).prop('data-habitID'), 
+            })
+            console.log({
+               checkbox: $('#check_id' + dayMapNames[i] ).is(":checked")
+             })
+          console.log($('#check_id' + dayMapNames[i] ).is(":checked") + " " + dayMapNames[i]  + " habitID " + item.habitID  );
+          if ($('#check_id' + dayMapNames[i] ).is(":checked") == true){
+            let box_value = 1;
+            console.log("checked_value1 " + $('#check_id' + dayMapNames[i] ).is(":checked") + " box_value= " + box_value + " weekday= " + dayMapNames[i] + " habitID " + item.habitID )
+          } else {
+          let box_value = 0;
+          console.log("checked_value2 " + $('#check_id' + dayMapNames[i] ).is(":checked") + " box_value= " + box_value + " weekday= " + dayMapNames[i])}
+          $.ajax({
+            url: "api/update_habit/:" + habitID,
+            type: "PUT",
+            data: {
+              habitID: $(this).prop('data-habitID'),
+              weekday: dayMapNames[i],
+              checked: $('#check_id' + dayMapNames[i] ).is(":checked"),
+            },
+            dataType: "json",
+          }).always(function() {
+            // generateRows(habits);
           });
+        });
 
+        
           form.append(input);
           tableData.append(form);
           tableRow.append(tableData).css("text-align", "center");

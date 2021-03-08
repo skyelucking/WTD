@@ -166,7 +166,7 @@ module.exports = function (app) {
     })
       .then(() => {
        
-        res.send(200);
+        res.sendStatus(200);
       })
       .catch(err => {
         console.log(err);
