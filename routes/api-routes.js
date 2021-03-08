@@ -127,7 +127,7 @@ module.exports = function(app) {
   });
 
    // Route to Update habits to send to database
-   app.put("/api/update_habit", function (req, res) {
+   app.put("/api/update_habit/:id", function (req, res) {
     console.log(req.body);
     db.habits_selected
       .update({
@@ -142,7 +142,8 @@ module.exports = function(app) {
       },
       {
         where: {
-          habitID: req.body.habitID
+          userID: req.body.userID
+          
         }})
       .then(() => {
         // console.log(res);

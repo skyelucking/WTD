@@ -62,6 +62,16 @@ $(document).ready(() => {
           6: item.Saturday,
         };
 
+        const dayMapNames = {
+          0: "Sunday",
+          1: "Monday",
+          2: "Tuesday",
+          3: "Wednesday",
+          4: "Thursday",
+          5: "Friday",
+          6: "Saturday",
+        };
+
         // create table data
         for (let i = 0; i < 7; i++) {
           let count = i;
@@ -70,25 +80,21 @@ $(document).ready(() => {
           let form = $("<div>").addClass("form-check");
           let input = $("<input>")
             .addClass("form-check-input")
-            .addClass("check" + item.value)
+            .attr("id", dayMapNames[i])
+            .attr("data-weekday", dayMapNames[i])
             .prop("type", "checkbox")
             .prop("checked", dayMap[i])
             .css("align-text", "center");
 
             //How can I assign the value of the input checkbox rendered above to the correct column below? The Days of the week are column names and there is a boolean true and false as their value
-            updateHabit.click(function() {
+            .form-check-input.click(function() {
               $.ajax({
-                url: "api/update_habit",
+                url: "api/update_habit/:" + id,
                 type: "PUT",
                 data: { habitID: item.habitID, 
-                Sunday: item.Sunday,
-                Monday: item.Monday,
-                Tuesday: item.Tuesday,
-                Wednesday: item.Wednesday,
-                Thursday: item.Thursday,
-                Friday: item.Friday,
-                Saturday: item.Saturday, 
-                         
+                weekday: id,
+                id: id
+                     
               },
                 dataType: "json",
               }).always(function() {
