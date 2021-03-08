@@ -1,4 +1,5 @@
 $(document).ready(() => {
+  let refresh_button = $('#refresh_button');
   let userId;
   let habits = [];
   $.get("/api/user_data").then((data) => {
@@ -9,6 +10,9 @@ $(document).ready(() => {
     generateRows(habits);
   });
   // need a function to create a row into the body of the table
+  
+    
+  
   function generateRows(arr) {
     arr.forEach((item) => {
       if (userId === item.userID) {
@@ -50,20 +54,44 @@ $(document).ready(() => {
         for (let i = 0; i < 7; i++) {
           let count = i;
           let tableData = $("<td>");
-          let form = $("<div>").addClass("form-check").css("text-align", "center");
+          let form = $("<div>").addClass("form-check");
           let input = $("<input>")
             .addClass("form-check-input")
             .prop("type", "checkbox")
-            .prop("unchecked", dayMap[i]).css("background-color", categoryMap[item.categoryID])
-            ;
+            .prop("checked", dayMap[i]);
           form.append(input);
           tableData.append(form);
           tableRow.append(tableData);
+
           count++;
         }
       }
-    });
+
+      // Refresh Week Button
+refresh_button.click(function(arr)  {
+  for (let i = 0; i < 7; i++) {
+     if (userId === item.userID) {   
+
+   $.ajax({
+     url: "api/update_habit",
+     type: "PUT",
+     data: { userID: item.userID,
+    Sunday: false,
+    Monday: false,
+    Tuesday: false,
+    Wednesday: false,
+    Thursday: false,
+    Friday: false,
+    Saturday: false,
+    },
+     
+   }).always(function() {
+     // renderHabits();
+   });
+ }};
+   
+    
   } // end of function
+);
+})}
 }); // end of export
-// Notes:
-// 1) This table is not responsive lol
