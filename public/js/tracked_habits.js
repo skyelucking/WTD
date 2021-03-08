@@ -87,20 +87,20 @@ $(document).ready(() => {
             .css("align-text", "center");
 
             //How can I assign the value of the input checkbox rendered above to the correct column below? The Days of the week are column names and there is a boolean true and false as their value
-            .form-check-input.click(function() {
-              $.ajax({
-                url: "api/update_habit/:" + id,
-                type: "PUT",
-                data: { habitID: item.habitID, 
-                weekday: id,
-                id: id
+            // .form-check-input.click(function() {
+            //   $.ajax({
+            //     url: "api/update_habit/:" + id,
+            //     type: "PUT",
+            //     data: { habitID: item.habitID, 
+            //     weekday: id,
+            //     id: id
                      
-              },
-                dataType: "json",
-              }).always(function() {
-                // renderHabits();
-              });
-            });         
+            //   },
+            //     dataType: "json",
+            //   }).always(function() {
+            //     // renderHabits();
+            //   });
+            // });         
             
           form.append(input);
           tableData.append(form);
