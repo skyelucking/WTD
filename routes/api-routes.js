@@ -98,7 +98,7 @@ module.exports = function(app) {
 
 
   // Route to Update habits to send to database
-  app.put("/api/update_habit", function (req, res) {
+  app.put("/api/refresh_week", function (req, res) {
     console.log(req.body);
     db.habits_selected
       .update({
@@ -125,5 +125,35 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
+
+   // Route to Update habits to send to database
+   app.put("/api/update_habit", function (req, res) {
+    console.log(req.body);
+    db.habits_selected
+      .update({
+        
+        Monday: req.body.Monday, 
+        Tuesday: req.body.Tuesday, 
+        Wednesday: req.body.Wednesday, 
+        Thursday: req.body.Thursday,  
+        Friday: req.body.Friday,  
+        Saturday: req.body.Saturday, 
+        Sunday: req.body.Sunday, 
+      },
+      {
+        where: {
+          habitID: req.body.habitID
+        }})
+      .then(() => {
+        // console.log(res);
+        
+        res.send(200);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(401).json(err);
+      });
+  });
+
   
 }; // end of export 
