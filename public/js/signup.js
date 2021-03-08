@@ -19,11 +19,15 @@ $(document).ready(() => {
     if (!userData.email || !userData.password) {
       return;
     }
+
     // If we have an email and password, run the signUpUser function
     signUpUser(userData);
     emailInput.val("");
     passwordInput.val("");
+    fName.val(""),
+    lName.val("")
   });
+  
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors

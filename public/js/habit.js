@@ -125,5 +125,5 @@ $(document).ready(() => {
       console.log(customHabit);
       renderHabits();
     });
-  });
+  }); 
 }); // end of doc ready
