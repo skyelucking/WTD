@@ -30,6 +30,16 @@ $(document).ready(() => {
           7: "#Efd1d1",
         };
 
+        //  create Save icon
+        let updateHabit= $("<th>").css("text-align", "center")
+          .html('<i class="fas fa-save"></i>')
+          .addClass("btn")
+          .css("border", "0px")
+          .attr("data-habitID", item.habitID);
+        tableRow.prepend(updateHabit);
+
+        
+        
         // create table head
         let tableHead = $("<th>")
           .attr("scope", "row")
@@ -37,6 +47,8 @@ $(document).ready(() => {
           .css("color", "#424242")
           .css("background-color", categoryMap[item.categoryID]);
         tableRow.append(tableHead);
+
+        
 
         console.log(item);
 
@@ -53,15 +65,41 @@ $(document).ready(() => {
         // create table data
         for (let i = 0; i < 7; i++) {
           let count = i;
-          let tableData = $("<td>");
+          let tableData = $("<td>")
+          .css("text-align", "center");
           let form = $("<div>").addClass("form-check");
           let input = $("<input>")
             .addClass("form-check-input")
+            .addClass("check" + item.value)
             .prop("type", "checkbox")
-            .prop("checked", dayMap[i]);
+            .prop("checked", dayMap[i])
+            .css("align-text", "center");
+
+            //How can I assign the value of the input checkbox rendered above to the correct column below? The Days of the week are column names and there is a boolean true and false as their value
+            updateHabit.click(function() {
+              $.ajax({
+                url: "api/update_habit",
+                type: "PUT",
+                data: { habitID: item.habitID, 
+                Sunday: item.Sunday,
+                Monday: item.Monday,
+                Tuesday: item.Tuesday,
+                Wednesday: item.Wednesday,
+                Thursday: item.Thursday,
+                Friday: item.Friday,
+                Saturday: item.Saturday, 
+                         
+              },
+                dataType: "json",
+              }).always(function() {
+                // renderHabits();
+              });
+            });         
+            
           form.append(input);
           tableData.append(form);
-          tableRow.append(tableData);
+          tableRow.append(tableData).css("text-align", "center");
+        
 
           count++;
         }
@@ -73,7 +111,7 @@ refresh_button.click(function(arr)  {
      if (userId === item.userID) {   
 
    $.ajax({
-     url: "api/update_habit",
+     url: "api/refresh_week",
      type: "PUT",
      data: { userID: item.userID,
     Sunday: false,
