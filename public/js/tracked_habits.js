@@ -127,9 +127,7 @@ $(document).ready(() => {
               success: function() {
                 console.log("success!");
               },
-            }).always(function() {
-              
-            });
+            }).always(function() {});
           });
 
           form.append(input);
@@ -156,15 +154,14 @@ $(document).ready(() => {
                   Wednesday: false,
                   Thursday: false,
                   Friday: false,
-                  Saturday: false
+                  Saturday: false,
                 },
-              }).always(function() {
-                
-              });
+              }).always(function() {});
             }
           }
         } // end of function
       );
     });
-  
-});
+  }});
+
+//let's work
