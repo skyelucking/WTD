@@ -179,5 +179,5 @@ $(document).ready(() => {
         } // end of function
       );
     });
-  }
+  
 });
