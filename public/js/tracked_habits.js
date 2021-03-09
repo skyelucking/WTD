@@ -128,7 +128,7 @@ $(document).ready(() => {
                 console.log("success!");
               },
             }).always(function() {
-              // generateRows(habits);
+              
             });
           });
 
