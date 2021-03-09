@@ -67,7 +67,7 @@ $(document).ready(() => {
           let form = $("<div>").addClass("form-check");
           let input = $("<input>")
           .addClass("form-check-input")
-          .attr("id", 'check_id' + dayMapNames[i] )
+          .attr("id", 'check_id' + item.habitID + dayMapNames[i] )
           .attr("data-weekday", dayMapNames[i])
           .attr("data-habitID", item.habitID)
           .attr("type", "checkbox")
@@ -75,29 +75,34 @@ $(document).ready(() => {
           .css("align-text", "center");
 
           
-          $('#check_id' + dayMapNames[i] ).change(function() {
+          input.change(function() {
             console.log({
-              habitID: $(this).prop('data-habitID'), 
-            })
+              habitID: $(this).attr('data-habitID'), 
+            });
+            // debugger;
             console.log({
-               checkbox: $('#check_id' + dayMapNames[i] ).is(":checked")
+               checkbox: $(this).is(":checked"),
+
              })
-          console.log($('#check_id' + dayMapNames[i] ).is(":checked") + " " + dayMapNames[i]  + " habitID " + item.habitID  );
-          if ($('#check_id' + dayMapNames[i] ).is(":checked") == true){
+          console.log($('check_id' + item.habitID + dayMapNames[i] ) + " habitID " + $(this).attr('data-habitID') );
+          if ($(this).prop("checked").valueOf() === true){
             let box_value = 1;
-            console.log("checked_value1 " + $('#check_id' + dayMapNames[i] ).is(":checked") + " box_value= " + box_value + " weekday= " + dayMapNames[i] + " habitID " + item.habitID )
+            console.log("checked_value1 " + $('#check_id' + dayMapNames[i] ).is(":checked") + " box_value= " + box_value + " weekday= " + dayMapNames[i] + " habitID " + $(this).attr('data-habitID'))
           } else {
           let box_value = 0;
           console.log("checked_value2 " + $('#check_id' + dayMapNames[i] ).is(":checked") + " box_value= " + box_value + " weekday= " + dayMapNames[i])}
           $.ajax({
-            url: "api/update_habit/:" + habitID,
-            type: "PUT",
+            url: "/api/update_habit/",
+            method: "PUT",
             data: {
-              habitID: $(this).prop('data-habitID'),
+              habitID: $(this).attr('data-habitID'),
               weekday: dayMapNames[i],
-              checked: $('#check_id' + dayMapNames[i] ).is(":checked"),
+              checked: $(this).prop("checked").valueOf(),
             },
             dataType: "json",
+            success: function(){
+             console.log("success!");
+            }
           }).always(function() {
             // generateRows(habits);
           });
