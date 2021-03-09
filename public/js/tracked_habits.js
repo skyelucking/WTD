@@ -73,7 +73,7 @@ $(document).ready(() => {
             .prop("checked", dayMap[i])
             .css("align-text", "center");
 
-          input.change(function() {
+          input.change(function () {
             console.log({
               habitID: $(this).attr("data-habitID"),
             });
@@ -83,8 +83,8 @@ $(document).ready(() => {
             });
             console.log(
               $("check_id" + item.habitID + dayMapNames[i]) +
-                " habitID " +
-                $(this).attr("data-habitID")
+              " habitID " +
+              $(this).attr("data-habitID")
             );
             if (
               $(this)
@@ -94,23 +94,23 @@ $(document).ready(() => {
               let box_value = 1;
               console.log(
                 "checked_value1 " +
-                  $("#check_id" + dayMapNames[i]).is(":checked") +
-                  " box_value= " +
-                  box_value +
-                  " weekday= " +
-                  dayMapNames[i] +
-                  " habitID " +
-                  $(this).attr("data-habitID")
+                $("#check_id" + dayMapNames[i]).is(":checked") +
+                " box_value= " +
+                box_value +
+                " weekday= " +
+                dayMapNames[i] +
+                " habitID " +
+                $(this).attr("data-habitID")
               );
             } else {
               let box_value = 0;
               console.log(
                 "checked_value2 " +
-                  $("#check_id" + dayMapNames[i]).is(":checked") +
-                  " box_value= " +
-                  box_value +
-                  " weekday= " +
-                  dayMapNames[i]
+                $("#check_id" + dayMapNames[i]).is(":checked") +
+                " box_value= " +
+                box_value +
+                " weekday= " +
+                dayMapNames[i]
               );
             }
             $.ajax({
@@ -124,10 +124,10 @@ $(document).ready(() => {
                   .valueOf(),
               },
               dataType: "json",
-              success: function() {
+              success: function () {
                 console.log("success!");
               },
-            }).always(function() {});
+            }).always(function () { });
           });
 
           form.append(input);
@@ -142,7 +142,7 @@ $(document).ready(() => {
 
   generateRandomQuotes();
 
-  function generateRandomQuotes(){
+  function generateRandomQuotes() {
     let quotes = ["You will never change your life until you change something you do daily!", "Good habits are as addictive as bad habits but much more rewarding.", "Motivation is what gets your started, Habit is what keeps you going!", "If you want to master a habit, the key is to start with repetition, not perfection.", "Hey, you! Don't Give Up, Okay?", "You are the most valuable investment you will ever make.", "Success doesn't come from what you do occassionally. It comes from what you do consistently. "];
 
     let randomIndex = Math.floor(Math.random() * quotes.length)
@@ -151,30 +151,27 @@ $(document).ready(() => {
 
   }
 
-      // Refresh Week Button
-      refresh_button.click(
-        function(arr) {
-          for (let i = 0; i < 7; i++) {
-            if (userId === item.userID) {
-              $.ajax({
-                url: "api/refresh_week",
-                type: "PUT",
-                data: {
-                  userID: item.userID,
-                  Sunday: false,
-                  Monday: false,
-                  Tuesday: false,
-                  Wednesday: false,
-                  Thursday: false,
-                  Friday: false,
-                  Saturday: false,
-                },
-              }).always(function() {});
-            }
-          }
-        } // end of function
-      );
-    });
-  }});
-
-//let's work
+  // Refresh Week Button
+  refresh_button.click(
+    function (arr) {
+      for (let i = 0; i < 7; i++) {
+        if (userId === item.userID) {
+          $.ajax({
+            url: "api/refresh_week",
+            type: "PUT",
+            data: {
+              userID: item.userID,
+              Sunday: false,
+              Monday: false,
+              Tuesday: false,
+              Wednesday: false,
+              Thursday: false,
+              Friday: false,
+              Saturday: false,
+            },
+          }).always(function () { });
+        }
+      }
+    } // end of function
+  );
+});
