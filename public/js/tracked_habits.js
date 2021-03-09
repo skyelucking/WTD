@@ -156,10 +156,10 @@ $(document).ready(() => {
                   Wednesday: false,
                   Thursday: false,
                   Friday: false,
-                  Saturday: false,
+                  Saturday: false
                 },
               }).always(function() {
-                // renderHabits();
+                
               });
             }
           }
