@@ -150,7 +150,7 @@ module.exports = function (app) {
   });
 
    // Route to Update habits to send to database
-   app.put("/api/update_habit/:id", function (req, res) {
+   app.put("/api/update_habit/", function (req, res) {
       console.log(req.body.weekday);
         console.log(req.body.checked);
         console.log(req.body.habitID);
