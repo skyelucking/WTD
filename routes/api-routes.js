@@ -24,27 +24,27 @@ module.exports = function (app) {
       .then(() => {
         res.redirect(307, "/api/login");
         
-          // const transporter = nodemailer.createTransport({
-          //   service: "hotmail",
-          //   auth: {
-          //     user: "dailyhabittracker@outlook.com",
-          //     pass: "March2021"
-          //   }
-          // });
-          // const mailingOptions = {
-          //   from: "dailyhabittracker@outlook.com",
-          //   to: req.body.email,
-          //   subject: "Thank You for Signing up!",
-          //   text: "We hope you enjoy tracking your habits. Remember, it is more about what you do consistently than what you do quickly."
-          // }
+          const transporter = nodemailer.createTransport({
+            service: "hotmail",
+            auth: {
+              user: "dailyhabittracker@outlook.com",
+              pass: "March2021"
+            }
+          });
+          const mailingOptions = {
+            from: "dailyhabittracker@outlook.com",
+            to: req.body.email,
+            subject: "Thank You for Signing up!",
+            text: "We hope you enjoy tracking your habits. Remember, it is more about what you do consistently than what you do quickly."
+          }
 
-          // transporter.sendMail(mailingOptions, (err, info) => {
-          //   if (err) {
-          //     console.log(err);
-          //     return;
-          //   }
-          //   console.log("Sent: " + info.response);
-          // })
+          transporter.sendMail(mailingOptions, (err, info) => {
+            if (err) {
+              console.log(err);
+              return;
+            }
+            console.log("Sent: " + info.response);
+          })
     
       })
       .catch(err => {
