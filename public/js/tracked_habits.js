@@ -28,7 +28,7 @@ $(document).ready(() => {
           7: "#Efd1d1",
         };
 
-                // create table head
+        // create table head
         let tableHead = $("<th>")
           .attr("scope", "row")
           .text(item.habitName)
@@ -60,55 +60,78 @@ $(document).ready(() => {
 
         // create table data
         for (let i = 0; i < 7; i++) {
-          
           let box_value;
           let count = i;
           let tableData = $("<td>").css("text-align", "center");
           let form = $("<div>").addClass("form-check");
           let input = $("<input>")
-          .addClass("form-check-input")
-          .attr("id", 'check_id' + item.habitID + dayMapNames[i] )
-          .attr("data-weekday", dayMapNames[i])
-          .attr("data-habitID", item.habitID)
-          .attr("type", "checkbox")
-          .prop("checked", dayMap[i])
-          .css("align-text", "center");
+            .addClass("form-check-input")
+            .attr("id", "check_id" + item.habitID + dayMapNames[i])
+            .attr("data-weekday", dayMapNames[i])
+            .attr("data-habitID", item.habitID)
+            .attr("type", "checkbox")
+            .prop("checked", dayMap[i])
+            .css("align-text", "center");
 
-          
           input.change(function() {
             console.log({
-              habitID: $(this).attr('data-habitID'), 
+              habitID: $(this).attr("data-habitID"),
             });
-            // debugger;
+
             console.log({
-               checkbox: $(this).is(":checked"),
-
-             })
-          console.log($('check_id' + item.habitID + dayMapNames[i] ) + " habitID " + $(this).attr('data-habitID') );
-          if ($(this).prop("checked").valueOf() === true){
-            let box_value = 1;
-            console.log("checked_value1 " + $('#check_id' + dayMapNames[i] ).is(":checked") + " box_value= " + box_value + " weekday= " + dayMapNames[i] + " habitID " + $(this).attr('data-habitID'))
-          } else {
-          let box_value = 0;
-          console.log("checked_value2 " + $('#check_id' + dayMapNames[i] ).is(":checked") + " box_value= " + box_value + " weekday= " + dayMapNames[i])}
-          $.ajax({
-            url: "/api/update_habit/",
-            method: "PUT",
-            data: {
-              habitID: $(this).attr('data-habitID'),
-              weekday: dayMapNames[i],
-              checked: $(this).prop("checked").valueOf(),
-            },
-            dataType: "json",
-            success: function(){
-             console.log("success!");
+              checkbox: $(this).is(":checked"),
+            });
+            console.log(
+              $("check_id" + item.habitID + dayMapNames[i]) +
+                " habitID " +
+                $(this).attr("data-habitID")
+            );
+            if (
+              $(this)
+                .prop("checked")
+                .valueOf() === true
+            ) {
+              let box_value = 1;
+              console.log(
+                "checked_value1 " +
+                  $("#check_id" + dayMapNames[i]).is(":checked") +
+                  " box_value= " +
+                  box_value +
+                  " weekday= " +
+                  dayMapNames[i] +
+                  " habitID " +
+                  $(this).attr("data-habitID")
+              );
+            } else {
+              let box_value = 0;
+              console.log(
+                "checked_value2 " +
+                  $("#check_id" + dayMapNames[i]).is(":checked") +
+                  " box_value= " +
+                  box_value +
+                  " weekday= " +
+                  dayMapNames[i]
+              );
             }
-          }).always(function() {
-            // generateRows(habits);
+            $.ajax({
+              url: "/api/update_habit/",
+              method: "PUT",
+              data: {
+                habitID: $(this).attr("data-habitID"),
+                weekday: dayMapNames[i],
+                checked: $(this)
+                  .prop("checked")
+                  .valueOf(),
+              },
+              dataType: "json",
+              success: function() {
+                console.log("success!");
+              },
+            }).always(function() {
+              // generateRows(habits);
+            });
           });
-        });
 
-        
           form.append(input);
           tableData.append(form);
           tableRow.append(tableData).css("text-align", "center");
@@ -142,6 +165,7 @@ $(document).ready(() => {
           }
         } // end of function
       );
-      });
-    }})
- // end of export
+    });
+  }
+});
+// end of export
