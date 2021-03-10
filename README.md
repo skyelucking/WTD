@@ -30,17 +30,17 @@ Whatever habits you might be struggling to break or create, know that we are roo
 2) Open folder in your editor of choice (VSC, Sublime, etc.) or check out [Winning The Day](https://winning-the-day.herokuapp.com/).
 
 ## Usage
-![sign-up](/public/img/sign-in.png)
+![sign-up](https://github.com/skyelucking/WTD/raw/ingram/public/img/sign-in.png)
 
 The first thing you will want to do is sign up for an account. Upon signing up, you will get a confirmation email. When you log in, you will see two options: 1) Manage Habits or 2) Track Habits. 
 
 As a new member, you will not have any data saved so you will want to click on "Manage Habits". 
 
-![selected-habits](/public/img/selectHabits.png)
+![selected-habits](https://github.com/skyelucking/WTD/raw/ingram/public/img/selectHabits.png)
 
 There you will be able to selected habits or navigate to the navigation bar to Add-A-Habit. On this page is where you will do all of the creating and deleting habits. 
 
-![selected-habits](/public/img/habit-tracker.png)
+![selected-habits](https://github.com/skyelucking/WTD/raw/ingram/public/img/habit-tracker.png)
 
 Navigate to the tracker tab where you will find all of the habits you added. This is where the magic happens.
 
