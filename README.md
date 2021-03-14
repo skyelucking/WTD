@@ -51,13 +51,13 @@ All you need to do is have the right attitude and start making the changes you w
 Distributed under the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) License. See [OpenSource.org](https://opensource.org/licenses) for more information.
 
 ## Tests
-1) Select 'Open in Integrated Terminal' by simply right-clicking 'server.js'.
+Select 'Open in Integrated Terminal' by simply right-clicking 'server.js'.
 
     ```
     node install
     node server.js
     ```
-2) 
+
 
 ## Questions
 If you have any questions, please reach out to us at lucking.skye@gmal.com or Kameshialatay@gmail.com
