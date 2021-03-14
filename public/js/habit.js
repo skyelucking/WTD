@@ -108,13 +108,13 @@ $(document).ready(() => {
         .trim(),
       categoryID: 7,
       userID: userId,
-      Monday: true,
-      Tuesday: true,
-      Wednesday: true,
-      Thursday: true,
-      Friday: true,
-      Saturday: true,
-      Sunday: true,
+      Monday: false,
+      Tuesday: false,
+      Wednesday: false,
+      Thursday: false,
+      Friday: false,
+      Saturday: false,
+      Sunday: false,
     };
 
     if (!customHabit) {
