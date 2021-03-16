@@ -163,15 +163,14 @@ $(document).ready(() => {
  
   // Refresh Week Button
  refresh_button.click(function(arr)  {
-   console.log("userId: " + userId);
-  for (let i = 0; i < 7; i++) {
-    
-     if (userId === item.userID) {   
+   console.log("userId", userId )
+    //  for (let i = 0; i < 7; i++)      {
+  //  if (userId === item.userID) {   
 
    $.ajax({
-     url: "api/update_habit",
+     url: "api/refresh_week",
      type: "PUT",
-     data: { userID: item.userID,
+     data: { userID: userId,
     Sunday: false,
     Monday: false,
     Tuesday: false,
@@ -182,8 +181,9 @@ $(document).ready(() => {
     },
 
    }).always(function() {
-     // renderHabits();
+    window.location.reload();
    });
- }};
+//  }
+// };
  }) // end of function
 });
